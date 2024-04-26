@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+    
+  </head>
+  <body>
+    <section
+      class="vh-100 bg-image"
+      style="
+        background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');
+      "
+    >
+      <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+          >
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+              <div class="card" style="border-radius: 15px">
+                <div class="card-body p-5">
+                  <h2 class="text-uppercase text-center mb-5">
+                    Login
+                  </h2>
+
+                  <form action="" method="POST">
+                    {% csrf_token %}
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                      <input type="text" id="form1Example1" class="form-control" name="uname" required />
+                      <label class="form-label" for="fname">Username</label>
+                    </div>
+              
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                      <input type="password" id="form1Example2" class="form-control" name="pass" required />
+                      <label class="form-label" for="fname">Password</label>
+                    </div>
+             
+                    <!-- 2 column grid layout for inline styling -->
+                    <div class="row mb-4">
+                      <div class="col d-flex justify-content-center">
+                        <!-- Checkbox -->
+                        <div class="form-check">
+                          <label for="otp_option" class="auth-option-label">
+                            <input type="radio" name="auth_option" id="otp_option" value="otp" checked>
+                            OTP
+                        </label>
+                        
+                        <label for="qr_option" class="auth-option-label">
+                            <input type="radio" name="auth_option" id="qr_option" value="qr">
+                            Code QR
+            
+                        </div>
+                      </div>
+              
+                      <div class="col">
+                        <!-- Simple link -->
+                        <a href="{% url 'forgot_password' %}">Forgot password?</a>
+                      </div>
+                    </div>
+
+                    <div class="text-center">
+                      <p>Don't have an account? <a href="{% url 'register-page' %}">Sign up</a></p>
+                  </div>
+              
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js">
+    </script>
+  </body>
+</html>

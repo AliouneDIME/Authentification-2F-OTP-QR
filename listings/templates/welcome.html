@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentification par Code QR</title>
+    <link rel="stylesheet" href="../static/css/style.css"> <!-- Inclure vos styles CSS ici -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <ul class="nav-links">
+                    <li><a href="{% url 'home-page' %}">Accueil</a></li>
+                    <li><a href="{% url 'logoutuser' %}">Déconnexion</a></li>
+                    <li><a href="{% url 'update_password' %}">Changer Mot de passe</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h1>Bienvenue, {{ user.username }}!</h1>
+        <div>
+        <img src="../static/img/undraw_profile_re_4a55.svg" alt="Illustration de profil">
+
+                    <p>Nom: {{ user.last_name }}</p>
+                    <p>Prénom: {{ user.first_name }}</p>
+                    <p>Email: {{ user.email }}</p>
+                    <p>Numéro: {{ user.userprofile.phone_number }}</p>
+                    <!-- Ajoutez d'autres informations ici -->
+                    
+                
+        
+    </header>
+    <script src="../static/js/mdb.min.js"></script>
+</body>
+</html>

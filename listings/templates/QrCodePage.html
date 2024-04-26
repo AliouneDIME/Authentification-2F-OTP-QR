@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="4;url=/validate_qr_code/"><!-- Redirection après 4 secondes -->
+    <title>Code QR</title>
+</head>
+<body>
+    {% csrf_token %}
+
+    <h1>Code QR d'authentification</h1>
+    <img src="data:image/png;base64,{{ image_base64 }}" alt="QR Code">
+
+</body>
+</html>
