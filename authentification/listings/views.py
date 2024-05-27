@@ -166,7 +166,7 @@ def QRCodePage(request):
         otp_secret = profile.otp_secret  # Supposons que vous stockez la clé secrète OTP dans le profil
 
         # Générez le code QR en utilisant la clé secrète
-        totp_uri = pyotp.TOTP(otp_secret).provisioning_uri(user.email, issuer_name="DIME")
+        totp_uri = pyotp.TOTP(otp_secret).provisioning_uri(user.email, issuer_name="")
         qr = qrcode.QRCode(
             version=1,
             error_correction=qrcode.constants.ERROR_CORRECT_L,
